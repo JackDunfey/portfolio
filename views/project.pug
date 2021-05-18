@@ -1,0 +1,62 @@
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, intial-scale=1.0')
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        script(src="/static/bootstrap/js/jquery.min.js")
+        script(src="/static/bootstrap/js/bootstrap.min.js")
+        link(rel="stylesheet", href="/static/bootstrap/css/bootstrap.min.css")
+        title=title+" | Jack Dunfey"
+        script(src="/static/scripts/holder.js")
+    body.bg-dark.text-light
+        nav.navbar.navbar-expand-md.navbar-light.bg-light
+                a.navbar-brand(href="/")
+                    img.d-inline-block.align-top.mr-2(src="/static/images/profile_picture.jpg", width="30", height="30", alt="Profile Picture", style="border-radius: 50%;")
+                    | Jack Dunfey
+                button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbar", aria-controls="navbar" aria-expanded="false", aria-label="Toggle Navigation")
+                    span.navbar-toggler-icon
+                div.collapse.navbar-collapse#navbar
+                    ul.navbar-nav.mr-auto.w-100
+                        li.nav-item
+                            a.nav-link(href="/") Home
+                        li.nav-item 
+                            a.nav-link(href="/aboutme") About Me 
+                        li.nav-item.dropdown
+                            a.nav-link.dropdown-toggle.active(href="#", id="navbarDropdown", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Projects
+                            .dropdown-menu(aria-labelledby="navbarDropdown")
+                                a.dropdown-item(href="/projects") Project Menu
+                                .dropdown-divider
+                                a.dropdown-item(href="/project/1") Project 1
+                                a.dropdown-item(href="/project/2") Project 2
+                                a.dropdown-item(href="/project/3") Project 3
+                                a.dropdown-item(href="/project/4") Project 4
+                                a.dropdown-item(href="/project/5") Project 5
+                                a.dropdown-item(href="/project/6") Project 6
+                                a.dropdown-item(href="/project/7") Project 7
+                                a.dropdown-item(href="/project/8") Project 8
+                        li.ml-auto.nav-item
+                            a.nav-link(href="/contact") Contact Me
+        .p-3
+            h1.text-center.display-1.font-weight-bold= title
+            .container
+                .row
+                    .col-md-6
+                        h2 Description
+                        | !{description}
+                    .col-md-6
+                        h2 Lessons Learned
+                        | !{lessons}
+                br
+                .row
+                    .col-md-6
+                        h2 What I liked about this project
+                        | !{proj_pros}
+                    .col-md-6
+                        h2 What I would change
+                        | !{proj_cons}
+                div(class="row d-" + (show_example ? "block" : "none"))
+                    h2 Example
+                    p.text-center Exaple would be here
+                div(class="row d-" + (show_gallery ? "block": "none"))
+                    h2= "Gallery"
+                    | !{gallery}

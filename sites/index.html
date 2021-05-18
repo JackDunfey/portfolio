@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Jack Dunfey</title>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Montserrat|Roboto&display=swap" rel="stylesheet">
+  <style media="screen">
+    	html, body {
+		  background-color: red;
+		  background-image: radial-gradient(circle , red, #111);
+		  font-family: 'IBM Plex Mono', monospace;
+		  /* color: #111C31; */
+		  color: #EEE3EC;
+		  width: 100vw;
+		  margin: 0px;
+		  padding: 0px;
+		}
+
+		.bot {
+		  display: block;
+		  margin-right: auto;
+		  margin-left: auto;
+		  width: 100px;
+		  opacity: 0;
+		  animation: botFade 2s forwards;
+		}
+
+		.info {
+		  opacity: 0;
+		  animation: textFade .5s 1.9s forwards;
+		}
+		.info2 {
+			opacity: 0;
+			animation: textFade .4s 2.3s forwards;
+		}
+		.info3 {
+			opacity: 0;
+			animation: textFade .3s 2.7s forwards;
+		}
+
+		.page {
+		  width: 100vw;
+		  min-height: 100vh;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  position: relative;
+		  text-align: center;
+		}
+
+		@keyframes botFade {
+		  0% {
+		    transform: scale(0.1);
+		    opacity: 0;
+		  }
+			70%{
+				opacity: 1;
+		    transform: scale(2);
+			}
+			80%{
+				transform: rotateZ(-45deg);
+			}
+			95%{
+				transform: rotateZ(45deg);
+		  }
+			100%{
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		@keyframes textFade {
+		  0% {
+		    opacity: 0;
+		  }
+		  100% {
+		    opacity: 1;
+		  }
+		}
+
+		.inline{
+			list-style-type: none;
+			display: flex;
+			padding: 0px;
+			justify-content: space-evenly;
+		}
+		.inline li{
+			float: left;
+		}
+		.inline li a{
+			color: #EEE3EC;
+			display: inline-block;
+			text-decoration: none;
+		}
+		.inline li a:hover{
+			color: white;
+			/* font-weight: bold; */
+			text-decoration: underline;
+		}
+  </style>
+  <link rel="stylesheet" href="/floating_labels.css">
+</head>
+<body>
+	<div class="page">
+		<div class="content">
+			<img class="bot" src="/static/images/bot.png" alt="bot" />
+      		<h1 class="name info">Jack Dunfey</h1>
+			<div class="info2">
+			<p>I am an FLCC Computer Science Student.<br>
+			I'm proficient in Javascript, Java, Python, HTML, and CSS</p>
+			</div>
+      <div class="links info3">
+		<ul class="inline">
+			<li><a href="/aboutme">Learn more about me</a></li>
+			<li><a href="/projects">See my projects</a></li>
+			<li><a href="/contact">Contact Me</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

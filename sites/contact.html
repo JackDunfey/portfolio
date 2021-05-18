@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/bootstrap/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <title>About Me | Jack Dunfey</title>
+    <script src="/static/scripts/holder.js"></script>
+    <script src="https://kit.fontawesome.com/edf5490e4b.js" crossorigin="anonymous"></script>
+    <style>
+        a.deco-none {
+			color: inherit;
+			text-decoration: none;
+            display: inline-block;
+		}
+        a.deco-none:hover{
+            cursor: pointer;
+        }
+        .flip-card {
+            background-color: transparent;
+            height: 276px;
+            /*perspective: 1000px;*/
+        }
+        .flip-card.card{
+            border: none;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        @media screen and (min-width: 992px){
+            #project_carousel{
+                width: 66%;
+            }
+            .project-row{
+                width: 80%;
+            }
+        }
+        @media screen and (max-width: 992px){
+            #project_carousel{
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="/static/styles/floating_labels.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href=".">
+            <img src="/static/images/profile_picture.jpg" width="30" height="30" class="d-inline-block align-top mr-2" style="border-radius: 50%;" alt="Profile Picture">Jack Dunfey
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto w-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutme">About Me</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle active">Projects</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="/projects" class="dropdown-item">Project Menu</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/project/1" class="dropdown-item">Project 1</a>
+                        <a href="/project/2" class="dropdown-item">Project 2</a>
+                        <a href="/project/3" class="dropdown-item">Project 3</a>
+                        <a href="/project/4" class="dropdown-item">Project 4</a>
+                        <a href="/project/5" class="dropdown-item">Project 5</a>
+                        <a href="/project/6" class="dropdown-item">Project 6</a>
+                        <a href="/project/7" class="dropdown-item">Project 7</a>
+                        <a href="/project/8" class="dropdown-item">Project 8</a>
+                    </div>
+                </li>
+                <li class="ml-auto nav-item"><a class="nav-link" href="/contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <section class="my-4">
+            <div class="row">
+                <div class="col-md-9">
+                    <form class="well form-horizontal" action="/email" method="POST">
+                        <fieldset>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="name">Name</label>  
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input name="name" id="name" placeholder="John Doe" class="form-control" type="text" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="control-label">Email</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="email" name="email" placeholder="john.doe@example.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="reason" class="control-label">Contact reason</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-list"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="reason" name="reason" list="reasons" required>
+                                            <datalist id="reasons">
+                                                <option value="Business Proposal"></option>
+                                                <option value="Question"></option>
+                                                <option value="Other (please specify in subject)"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tel" class="control-label">Phone Number</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+                                            </div>
+                                            <input type="tel" class="form-control" id="tel" name="tel">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 visibility-hidden"></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tel" class="control-label">Website or domain name</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="website" name="website">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="subject" class="control-label">Subject</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-pencil fa-fw"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="subject" name="subject">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label for="message" class="control-label">Message</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fa fa-pencil fa-fw"></i></span>
+                                            <textarea class="form-control" name="message" id="message" placeholder="Message" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Success message -->
+                            <div class="alert alert-success d-none" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+                            
+                            <!-- Button -->
+                            <div class="form-group w-100 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-warning w-50" >Send <i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            <!--Grid column-->
+            <div class="col-md-3 text-center">
+                <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                        <p>Farmington, NY 14425, USA</p>
+                    </li>
+                    <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                        <p>+1 (585) 943-1154</p>
+                    </li>
+                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                        <p>jdunfey@fingerlakes.edu</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </body>
+</html>

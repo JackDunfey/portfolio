@@ -1,0 +1,148 @@
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, intial-scale=1.0')
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        script(src="/static/bootstrap/js/jquery.min.js")
+        script(src="/static/bootstrap/js/bootstrap.min.js")
+        link(rel="stylesheet", href="/static/bootstrap/css/bootstrap.min.css")
+        title="Projects | Jack Dunfey"
+        script(src="/static/scripts/holder.js")
+        link(rel="stylesheet" href="/static/styles/projects.css")
+    body 
+        nav.navbar.navbar-expand-md.navbar-light.bg-light
+            a.navbar-brand(href=".")
+                img.d-inline-block.align-top.mr-2(src="/static/images/profile_picture.jpg", width="30", height="30", alt="Profile Picture", style="border-radius: 50%;")
+                | Jack Dunfey
+            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbar", aria-controls="navbar" aria-expanded="false", aria-label="Toggle Navigation")
+                span.navbar-toggler-icon
+            div.collapse.navbar-collapse#navbar
+                ul.navbar-nav.mr-auto
+                    li.nav-item
+                        a.nav-link(href=".")
+                            | Home
+                    li.nav-item 
+                        a.nav-link(href="/aboutme") About Me 
+                    li.nav-item 
+                        a.nav-link.active(href="/projects") Projects
+        div.container-fluid(style="background-color: #fdfdfd;")
+            .row.justify-content-center 
+                div.carousel.slide#project_carousel(data-ride="carousel")
+                    ol.carousel-indicators 
+                        li.active(data-target="#project_carousel", data-slide-to="0")
+                        li(data-target="#project_carousel", data-slide-to="1")
+                        li(data-target="#project_carousel", data-slide-to="2")
+                    .carousel-inner
+                        .carousel-item.active
+                            img.d-block.w-100(data-src="holder.js/100px450?bg=777&text=Thumbnail 1", alt="...")
+                            .carousel-caption.d-none.d-md-block 
+                                h5 First slide label
+                                p Nulla vitae elit libero, a pharetra augue mollis interdum.
+                        .carousel-item 
+                            img.d-block.w-100(data-src="holder.js/100px450?bg=777&text=Thumbnail 2", alt="...")
+                            .carousel-caption.d-none.d-md-block 
+                                h5 Second slide label
+                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        .carousel-item 
+                            img.d-block.w-100(data-src="holder.js/100px450?bg=777&text=Thumbnail 3", alt="...")
+                            .carousel-caption.d-none.d-md-block 
+                                h5 Third slide label
+                                p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    a.carousel-control-prev(href="#project_carousel", role="button", data-slide="prev")
+                        span.carousel-control-prev-icon(aria-hidden="true")
+                        span.sr-only Previous
+                    a.carousel-control-next(href="#project_carousel", role="button", data-slide="next")
+                        span.carousel-control-next-icon(aria-hidden="true")
+                        span.sr-only Next
+            .mb-3 
+                .row.mt-md-4.w-md-80.project-row.mx-auto <!-- This is changed from style m auto-->
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+                .row.mt-md-4.w-md-80.project-row.mx-auto <!-- This is changed from style m auto-->
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+                    .col-md 
+                        a.deco-none.project.w-100
+                            .card.flip-card(style="height:276px;")
+                                .flip-card-inner 
+                                    .flip-card-front 
+                                        img.card-img-top(data-src="holder.js/100px200", alt="placeholder_image")
+                                        .card-body 
+                                            h5.card-title Project title 
+                                    .card-body.flip-card-back 
+                                        h5.card-title Project Description
+                                        p.card-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.
+        script [...document.getElementsByClassName("deco-none")].forEach((link,i)=>link.href=`/project/${i+1}`);

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="html" lang="en" dir="rtl">
+  <head>
+    <style media="screen">
+      .body, .html{
+        padding: 0px;
+        margin: 0px;
+        height: 100%;
+        transform: rotateX(50deg);
+        color: transparent;
+        display: flex;
+        justify-content: center;
+        animation: shake .75s ease infinite;
+        font-family: "Comic Sans", cursive;
+      }
+      .body{
+        background-color: #800020;
+        text-shadow: 5px 5px 1px #ff0000,10px 10px 1px #0000ff;
+        /* text-shadow: 34px 60px rgba(255, 255, 0, 0.6); */
+      }
+      .rt{
+        font-size: 25pt;
+        transition-duration: 4s;
+        transform: rotateZ(67deg);
+        background: rgba(255, 0, 0);
+        letter-spacing: 2px;
+      }
+      .button{
+        font-size: 35pt;
+        position: absolute;
+        top: 40%;
+        left: 60%;
+        letter-spacing: 5px;
+        border-radius: 12px;
+      }
+      .button:hover{
+        position: absolute;
+        transform: rotateZ(-36deg);
+        top: 90%;
+        left: 0px;
+      }
+      .link{
+          text-decoration-color: blue;
+          text-decoration: line-through;
+          position: relative;
+          top: 100px;
+          display: inline-block;
+      }
+      .title{
+        transform: none !important;
+        position: relative;
+        top: -10px;
+        text-shadow: none !important;
+        color: rgb(255, 255, 0, 0.7) !important;
+        font-size: 5rem;
+        width: 100%;
+        letter-spacing: 12px;
+        white-space: nowrap;
+      }
+      @keyframes shake{
+        0%{
+          transform: translate(0);
+        }
+        10%,30%,50%,70%,90%{
+          transform: translate(-.5em);
+        }
+        20%,30%,50%,90%{
+          transform: translateY(-.6em);
+        }
+        10%,40%,80%,70%{
+          transform: translateY(.4em);
+        }
+        20%,40%,60%,80%{
+          transform: translate(.8em);
+        }
+        100%{
+          transform: translate(0);
+        }
+      }
+      .box{
+        border-radius: 12px;
+        width: 100px;
+        height: 100px;
+        background-color: lime;
+        z-index: -1;
+      }
+      .link:hover{
+        background-color: yellow;
+        color: lime;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <h1 class="title" style="text-align: center">The design of <em>tommorow</em><br>today<br><small>Click the link</small></h1>
+    <button type="button" class="button" name="button">Click here for $</button>
+    <div class="rt">
+      This is beautiful
+    </div>
+    <div class="rt randpos">
+      <a href="javascript:void(0);" class="link">This is a link</a>
+    </div>
+    <div class="box randpos"></div>
+    <div class="box randpos"></div>
+    <div class="box randpos"></div>
+    <script type="text/javascript">
+        [...document.querySelectorAll("body *")].forEach((item, i) => {
+          window.setInterval(function(){
+            let a = [];
+            for(let i = 0; i < 2; i++){
+              let t = "#";
+              for(let j = 0; j < 6; j++, t+=Math.ceil(Math.random()*16).toString(16));
+              a.push(t);
+              item.style.color = t;
+            }
+            item.style.transform = `rotateZ(${Math.floor(Math.random()*180)}deg)`;
+            item.style.textShadow = `15px 15px 10px ${a[0]}, 20px 20px 10px ${a[1]}`;
+          },123);
+        });
+        window.setInterval(function(){
+          [...document.querySelectorAll(".randpos")].forEach((item, i) => {
+            item.style.position = "absolute";
+            item.style.top = `${Math.random()*document.body.offsetHeight}px`;
+            item.style.left = `${Math.random()*document.body.offsetWidth}px`;
+          });
+        }, 600);
+        window.setInterval(function(){
+          let elem = document.createElement("div");
+          elem.className = "box randpos";
+          document.body.append(elem);
+        },1000);
+    </script>
+  </body>
+</html>
