@@ -10,7 +10,7 @@ html
         script(src="/static/scripts/holder.js")
         link(rel="stylesheet" href="/static/styles/projects.css")
         script(src="https://kit.fontawesome.com/edf5490e4b.js" crossorigin="anonymous")
-    body 
+    body
         nav.navbar.navbar-expand-md.navbar-light.bg-light
                 a.navbar-brand(href="/")
                     img.d-inline-block.align-top.mr-2(src="/static/images/profile_picture.jpg", width="30", height="30", alt="Profile Picture", style="border-radius: 50%;")
@@ -21,8 +21,8 @@ html
                     ul.navbar-nav.mr-auto.w-100
                         li.nav-item
                             a.nav-link(href="/") Home
-                        li.nav-item 
-                            a.nav-link(href="/aboutme") About Me 
+                        li.nav-item
+                            a.nav-link(href="/aboutme") About Me
                         li.nav-item.dropdown
                             a.nav-link.dropdown-toggle.active(href="#", id="navbarDropdown", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Projects
                             .dropdown-menu(aria-labelledby="navbarDropdown")
@@ -39,9 +39,9 @@ html
                         li.ml-auto.nav-item
                             a.nav-link(href="/contact") Contact Me
         div.container-fluid(style="background-color: #fdfdfd;")
-            .row.justify-content-center 
+            .row.justify-content-center
                 div.carousel.slide#project_carousel(data-ride="carousel")
-                    ol.carousel-indicators 
+                    ol.carousel-indicators
                         li.active(data-target="#project_carousel", data-slide-to="0")
                         li(data-target="#project_carousel", data-slide-to="1")
                         li(data-target="#project_carousel", data-slide-to="2")
@@ -49,17 +49,17 @@ html
                         .carousel-item.active
                             a(href="/pr")
                                 img.d-block.w-100(src="/static/images/projects/phishing.jpg", alt="Facebook Phishing Image", style="height: 450px;")
-                            .carousel-caption.d-none.d-md-block 
-                                h5.text-primary First slide label
+                            .carousel-caption.d-none.d-md-block
+                                h5.text-primary Phishing Education Tool
                                 p.text-primary This project was made as a phishing demonstration and educational tool.
-                        .carousel-item 
+                        .carousel-item
                             img.d-block.w-100(src="/static/images/projects/maze.png", alt="Photo of the maze", style="height: 450px;")
-                            .carousel-caption.d-none.d-md-block 
+                            .carousel-caption.d-none.d-md-block
                                 h5.text-primary Maze Escape
                                 p.text-primary You become a character in a dark maze and must maneuver your way to the exit.
-                        .carousel-item 
+                        .carousel-item
                             img.d-block.w-100(src="/static/images/projects/flappybirdAI.png", alt="Photo of Flabbybird AI demo", style="height: 450px;")
-                            .carousel-caption.d-none.d-md-block 
+                            .carousel-caption.d-none.d-md-block
                                 h5.text-primary FlappyBird AI
                                 p.text-primary A functional example of machine learning with customizable settings.
                     a.carousel-control-prev(href="#project_carousel", role="button", data-slide="prev")
@@ -69,20 +69,20 @@ html
                         span.carousel-control-next-icon(aria-hidden="true")
                         span.sr-only Next
             mixin project(name="Project Title", description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate veniam nemo aut id.", img_src="holder.js/100px200")
-                .col-md 
+                .col-md
                     a.deco-none.project.w-100
                         .card.flip-card(style="height: 276px;")
-                            .flip-card-inner 
+                            .flip-card-inner
                                 .flip-card-front
                                     img.card-img-top.mb-4(src=img_src, alt="these images should show up", style="height: 200px;")
                                     h5.card-title
                                         //- span.fa-stack.fa-sm(style="backface-visibility: hidden;")
-                                        //-     i.fa.fa-square.fa-stack-2x 
+                                        //-     i.fa.fa-square.fa-stack-2x
                                         //-     i.fa.fa-terminal.fa-stack-1x.fa-inverse
                                         | !{name}
-                                .flip-card-back 
+                                .flip-card-back
                                     br
-                                    h5.card-title Project Description 
+                                    h5.card-title Project Description
                                     .card-text.px-3= description
             .mb-3#projects
                 .row.mt-md-4.w-md-80.project-row(style="margin:auto;")

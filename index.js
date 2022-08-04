@@ -3,6 +3,7 @@ const lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, rer
 const express = require("express");
 const path = require("path");
 const Datastore = require("./Datastore.js");
+const emails = new Datastore("./emails.db");
 const projects = new Datastore("./projects.db");
 const app = express();
 app.use(express.urlencoded({extended: true}));
@@ -18,7 +19,11 @@ app.get("/aboutme",(req,res)=>{
 app.get("/contact",(req,res)=>{
   res.sendFile(path.join(__dirname,"sites/contact.html"));
 });
-app.use("/email",require("./email.js"));
+const sendEmail = require("./email.js");
+app.post("/email", (req,res)=>{
+  emails.insert({name, email, reason, tel, subject, message} = req.body);
+  res.redirect("/contact#sent");
+})
 
 function getProjectInfo(proj_id){
   let databaseArray = projects.findSync({proj_id});
