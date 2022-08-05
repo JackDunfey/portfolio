@@ -28,14 +28,16 @@ html
                             .dropdown-menu(aria-labelledby="navbarDropdown")
                                 a.dropdown-item(href="/projects") Project Menu
                                 .dropdown-divider
-                                a.dropdown-item(href="/project/1") Project 1
-                                a.dropdown-item(href="/project/2") Project 2
-                                a.dropdown-item(href="/project/3") Project 3
-                                a.dropdown-item(href="/project/4") Project 4
-                                a.dropdown-item(href="/project/5") Project 5
-                                a.dropdown-item(href="/project/6") Project 6
-                                a.dropdown-item(href="/project/7") Project 7
-                                a.dropdown-item(href="/project/8") Project 8
+                                a.dropdown-item(href="/project/1") !{proj1Title}
+                                a.dropdown-item(href="/project/2") !{proj2Title}
+                                a.dropdown-item(href="/project/3") !{proj3Title}
+                                a.dropdown-item(href="/project/4") !{proj4Title}
+                                a.dropdown-item(href="/project/5") !{proj5Title}
+                                a.dropdown-item(href="/project/6") !{proj6Title}
+                                a.dropdown-item(href="/project/7") !{proj7Title}
+                                a.dropdown-item(href="/project/8") !{proj8Title}
+                                a.dropdown-item(href="/project/9") !{proj9Title}
+                                a.dropdown-item(href="/project/10") !{proj10Title}
                         li.ml-auto.nav-item
                             a.nav-link(href="/contact") Contact Me
         div.container-fluid(style="background-color: #fdfdfd;")
@@ -95,4 +97,7 @@ html
                     +project(proj6Title, proj6Description, proj6Src)
                     +project(proj7Title, proj7Description, proj7Src)
                     +project(proj8Title, proj8Description, proj8Src)
+                .row.mt-md-4.w-md-80.project-row(style="margin:auto;")
+                    +project(proj9Title, proj9Description, proj9Src)
+                    +project(proj10Title, proj10Description, proj10Src)
         script [...document.getElementsByClassName("deco-none")].forEach((link,i)=>link.href=`/project/${i+1}`);

@@ -37,7 +37,7 @@ app.get("/projectHTML",(req,res)=>{
 })
 app.get("/projects",(req,res)=>{
   let info = {};
-  for(let i= 0; i < 8; i++){
+  for(let i = 0; i < 9; i++){
     let data = getProjectInfo(i);
     let pre = `proj${i+1}`;
     info[pre+"Title"] = data["name"];
